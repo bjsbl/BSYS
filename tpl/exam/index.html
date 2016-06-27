@@ -1,0 +1,26 @@
+<div id="main">
+    <form action="" method="">
+        <div class="search_add">
+            <div>考试名称：<input type="text" value="" class="text_search width200"/></div>
+            <div><input type="button" value="搜索" class="btn_search"/></div>
+            <input type="button" value="创建成绩" class="btn_add" ng-click="toAddExamCate()" />
+            <input type="button" value="导入成绩" class="btn_add" ng-click="toAddExam()" />
+        </div>
+        <div id="data">
+            <table id="datalist">
+                <tr>
+                    <th class="th_select_all">
+                        <input type="checkbox" onclick="selectAdmins(this);"/>
+                        <span>全选</span>
+                    </th>
+                    <th>管理者</th>
+                    <th>班级名</th>
+                    <th>学生人数</th>
+                    <th>教师人数</th>
+                    <th>家长人数</th>
+                    <th>创建时间</th>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>

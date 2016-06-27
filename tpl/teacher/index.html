@@ -1,0 +1,25 @@
+<div id="main" ng-init="initTeaList()">
+    <form action="" method="">
+        <div class="search_add">
+            <input type="button" value="返回班级" class="btn_add" ng-click="goClass()" />
+        </div>
+        <div id="data">
+            <table id="datalist">
+                <tr>
+                    <th>班级名称</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>头像</th>
+                    <th>操作</th>
+                </tr>
+                <tr ng-repeat="tea in teaList">
+                    <td ng-bind="tea.classname"></td>
+                    <td ng-bind="tea.name"></td>
+                    <td ng-bind="tea.name"></td>
+                    <td ng-bind="tea.sex"></td>
+                    <td><a ng-click="delTea(tea.id)">删除</a></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,18 @@
+<div id="main" ng-init="initFeed()">
+    <form action="" method="">
+        <div id="data">
+            <table id="datalist">
+                <tr>
+                    <th>时间</th>
+                    <th>反馈内容</th>
+                    <th>留言人</th>
+                </tr>
+                <tr ng-repeat="feed in feedList">
+                    <td ng-bind="feed.create_time"></td>
+                    <td ng-bind="feed.content"></td>
+                    <td ng-bind="feed.oid"></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>

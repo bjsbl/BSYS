@@ -1,0 +1,36 @@
+<div id="main" ng-init="initClass()">
+    <div class="search_add">
+    </div>
+    <div class="text_info clearfix"><span>班级名称：</span></div>
+    <div class="input_info" style="height:150px;overflow:scroll">
+        <div ng-repeat="cls in classList">
+            <span ng-bind="cls.orgname+'-'+cls.name+'(共'+cls.num+'学生/已绑'+cls.stunum+'学生/'+cls.teachernum+'老师/'+cls.parentnum+'家长)'"></span>
+            <input type="checkbox" ng-checked="isSelected(cls.id)" ng-click="updateSelection($event,cls.id)"/>
+        </div>
+    </div>
+    <div class="text_info clearfix"><span>标题：</span></div>
+    <div class="input_info">
+        <input type="text" ng-model="msg.title"/>
+        <span class="required">*</span>
+    </div>
+    <div class="text_info clearfix"><span>外链地址：</span></div>
+    <div class="input_info">
+        <input type="text" ng-model="msg.link"/>
+        <span class="required">*</span>
+    </div>
+    <div class="text_info clearfix"><span>接收角色：</span></div>
+    <div class="input_info">
+        <select ng-model="senttype" ng-options="role.name for role in roleList">
+        </select>
+        <span class="required">*</span>
+    </div>
+    <div class="text_info clearfix"><span>内容：</span></div>
+    <div class="input_info">
+        <textarea class="width350" rows="10" ng-model="msg.content"></textarea>
+        <span class="required">*</span>
+    </div>
+    <div class="button_info clearfix">
+        <input type="button" value="发送" class="btn_save" ng-click="addMessage()"/>
+        <input type="button" value="返回" class="btn_save" onclick="javascript:history.go(-1)"/>
+    </div>
+</div>

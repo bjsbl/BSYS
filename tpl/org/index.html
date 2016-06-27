@@ -1,0 +1,26 @@
+<div id="main" ng-init="initOrgList()">
+    <form action="" method="">
+        <div class="search_add">
+            <div>机构名称：<input type="text" ng-model="query.name" class="text_search width200"/></div>
+            <div><input type="button" value="搜索" class="btn_search" ng-click="searchOrg()" />
+            <input type="button" value="重置" class="btn_search" ng-click="initOrgList(true)" /></div>
+            <input type="button" value="增加" class="btn_add" ng-click="toAddOrg()" />
+        </div>
+        <div id="data">
+            <table id="datalist">
+                <tr>
+                    <th>机构名称</th>
+                    <th>创建人</th>
+                    <th>班级数量</th>
+                    <th>操作</th>
+                </tr>
+                <tr ng-repeat="org in orgList">
+                    <td ng-click="findClass(org.id)" ng-bind="org.name"></td>
+                    <td ng-bind="org.manager"></td>
+                    <td ng-bind="org.classnum"></td>
+                    <td><a ng-click="delOrg(org.id)">删除</a></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,42 @@
+<div id="main" ng-init="initClassList()">
+    <form action="" method="">
+        <!--查询-->
+        <div class="search_add">
+            <div>班级名称：<input type="text" ng-model="query.name" class="text_search width200"/></div>
+            <div><input type="button" value="搜索" class="btn_search" ng-click="searchCls()"/>
+                <input type="button" value="重置" class="btn_search" ng-click="initClassList()"/>
+            </div>
+
+            <input type="button" value="创建班级" class="btn_add" ng-click="toAddCls()"/>
+            <input type="button" value="返回机构" class="btn_add" ng-click="goOrgList()"/>
+        </div>
+        <!--数据区域：用表格展示数据-->
+        <div id="data">
+            <table id="datalist">
+                <tr>
+                    <th>机构名称</th>
+                    <th>班级名称</th>
+                    <th>标识码</th>
+                    <th>班级管理员</th>
+                    <th>创建时间</th>
+                    <th>(学生)/(家长)/(老师)</th>
+                    <th>班级人数</th>
+                    <th>操作</th>
+                </tr>
+                <tr ng-repeat="cla in classList">
+                    <td ng-bind="cla.orgname"></td>
+                    <td ng-bind="cla.name" ng-click="findStu(cla.id)"></td>
+                    <td ng-bind="cla.code"></td>
+                    <td ng-bind="cla.manager"></td>
+                    <td ng-bind="cla.create_Time"></td>
+                    <td><span ng-bind="cla.bindstunum" ng-click="findStu(cla.id)"></span>/
+                        <span ng-bind="cla.parentnum"></span>/
+                        <span ng-bind="cla.teachernum" ng-click="findTea(cla.id)"></span>
+                    </td>
+                    <td ng-bind="cla.stunum"></td>
+                    <td><a ng-click="delClsById(cla.id)">删除</a></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>

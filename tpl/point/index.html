@@ -1,0 +1,29 @@
+<div id="main">
+    <form action="" method="">
+        <!--查询-->
+        <div class="search_add">
+            <div>用户OID：<input type="text" ng-model="query.oid" class="text_search width200"/></div>
+            <div><input type="button" value="今天" class="btn_search" ng-click="findPointByOid(d)"/>
+                <input type="button" value="本周" class="btn_search" ng-click="findPointByOid(w)"/></div>
+        </div>
+        <!--数据区域：用表格展示数据-->
+        <div id="data">
+            <table id="datalist">
+                <tr>
+                    <th>时间</th>
+                    <th>动作</th>
+                    <th>URI</th>
+                    <th>积分</th>
+                    <th>备注</th>
+                </tr>
+                <tr ng-repeat="act in actionList">
+                    <td ng-bind="act.create_time"></td>
+                    <td ng-bind="act.name"></td>
+                    <td ng-bind="act.action"></td>
+                    <td>+<span ng-bind="act.point"></span></td>
+                    <td ng-bind="act.remark"></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>

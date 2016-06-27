@@ -1,0 +1,33 @@
+<div id="main" ng-init="initStuList()">
+    <form action="" method="">
+        <div class="search_add">
+            <div>学生姓名：<input type="text" ng-model="query.name" class="text_search width100"/></div>
+            <div><input type="button" value="搜索" class="btn_search" ng-click="searchStu()" /></div>
+            <input type="button" value="导入学生" class="btn_add" ng-click="toAddStu()" />
+            <input type="button" value="查看考试" class="btn_add" ng-click="goExam()" />
+            <input type="button" value="返回班级" class="btn_add" ng-click="goClass()" />
+        </div>
+        <div id="data">
+            <table id="datalist">
+                <tr>
+                    <th>班级名称</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>学号</th>
+                    <th>绑定人数</th>
+                    <th>出生日期</th>
+                    <th>操作</th>
+                </tr>
+                <tr ng-repeat="stu in stuList">
+                    <td ng-bind="stu.classname"></td>
+                    <td ng-bind="stu.name"></td>
+                    <td ng-bind="stu.sex"></td>
+                    <td ng-bind="stu.classcode"></td>
+                    <td ng-bind="stu.bindnum" ng-click="toBindList(stu.id)"></td>
+                    <td ng-bind="stu.birth"></td>
+                    <td><a ng-click="delStu(stu.id)">删除</a></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>

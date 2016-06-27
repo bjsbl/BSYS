@@ -1,0 +1,27 @@
+<div id="main" ng-init="initMessageList()">
+    <form action="" method="">
+        <!--查询-->
+        <div class="search_add">
+            <input type="button" value="新建消息" class="btn_add" ng-click="toAddMessage()"/>
+        </div>
+        <!--数据区域：用表格展示数据-->
+        <div id="data">
+            <table id="datalist">
+                <tr>
+                    <th>标题</th>
+                    <th>发送内容</th>
+                    <th>接收对象</th>
+                    <th>外链地址</th>
+                    <th>创建时间</th>
+                </tr>
+                <tr ng-repeat="msg in messageList">
+                    <td ng-bind="msg.title"></td>
+                    <td ng-bind="msg.content"></td>
+                    <td ng-bind="msg.senttype"></td>
+                    <td ng-bind="msg.link"></td>
+                    <td ng-bind="msg.create_Time"></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>

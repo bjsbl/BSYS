@@ -1,0 +1,32 @@
+<div id="main" ng-init="initExamUpload()">
+    <form action="" method="">
+        <div class="search_add">
+        </div>
+        <div class="text_info clearfix"><span>班级名称：</span></div>
+        <div class="input_info">
+            <input type="text" ng-model="cls_id" />
+            <span class="required">*</span>
+        </div>
+        <div class="text_info clearfix"><span>考试类别：</span></div>
+        <div class="input_info">
+            <select ng-model="examcate" ng-options="cate.NAME for cate in examCateList">
+            </select>
+            <span class="required">*</span>
+        </div>
+        <div class="text_info clearfix"><span>考试科目：</span></div>
+        <div class="input_info">
+            <select ng-model="subjects" ng-options="sub.NAME for sub in subList">
+            </select>
+            <span class="required">*</span>
+        </div>
+        <div class="text_info clearfix"><span>上传文件：</span></div>
+        <div class="input_info">
+            <input type="file" file-model="files"/>
+            <span class="required">*</span>
+        </div>
+        <div class="button_info clearfix">
+            <input type="button" value="导入" class="btn_save" ng-click="addExam()" />
+            <input type="button" value="返回" class="btn_save" onclick="javascript:history.go(-1)" />
+        </div>
+    </form>
+</div>

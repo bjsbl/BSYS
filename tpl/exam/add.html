@@ -1,0 +1,39 @@
+<div id="main" ng-init="initExamUpload()">
+    <form action="" method="">
+        <div class="search_add">
+        </div>
+        <div class="text_info clearfix"><span>班级名称：</span></div>
+        <div class="input_info">
+            <input type="text" ng-model="exam.jx_class_ids"/>
+            <span class="required">*</span>
+        </div>
+        <div class="text_info clearfix"><span>考试名称：</span></div>
+        <div class="input_info">
+            <input type="text" ng-model="exam.title"/>
+            <span class="required">*</span>
+        </div>
+        <div class="text_info clearfix"><span>考试时间：</span></div>
+        <div class="input_info">
+            <input type="text" ng-model="exam.test_Date"/>
+            <span class="required">*</span>
+        </div>
+        <div class="text_info clearfix"><span>考试描述：</span></div>
+        <div class="input_info">
+            <input type="text" ng-model="exam.descrption"/>
+            <span class="required">*</span>
+        </div>
+        <div class="text_info clearfix"><span>考试科目：</span></div>
+        <div class="input_info">
+            <select name="subjectId">
+                <option ng-repeat="sub in subList" ng-bind="sub.NAME"></option>
+            </select>
+            总分：<input type="text" type="number" value="100" name="score_type" />
+            计入总分:<input type="checkbox" name="issum" />
+            公开:<input type="checkbox" name="isranking" />
+        </div>
+        <div class="button_info clearfix">
+            <input type="button" value="添加" class="btn_save" ng-click="addExamCate()"/>
+            <input type="button" value="返回" class="btn_save" onclick="javascript:history.go(-1)"/>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,11 @@
+<div id="main" ng-init="initInfo()">
+    <h1>数据预览</h1>
+
+    <div id="data">
+        <div ng-repeat="obj in info" class="sys_content">
+            <span ng-repeat="sys in obj" class="sys_bind">
+            <span ng-bind="sys.keydesc"></span>:<span ng-bind="sys.value" class="sys_info"></span>
+            </span>
+        </div>
+    </div>
+</div>
